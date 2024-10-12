@@ -21,11 +21,19 @@ const notificationSlice = createSlice({
 
     // When ExtraReducers defined as an object it receives a builder object.
     // Using Builder Callbacks
-    extraReducers: (builder) => {
-        builder.addCase(resetCounter, (state, action ) => {
-            state.message = "Counter reset";
+    // extraReducers: (builder) => {
+    //     builder.addCase(resetCounter, (state, action ) => {
+    //         state.message = "Counter reset";
+    //         state.type = "info";
+    //     })
+    // }
+
+    // ExtraReducers as an object WITH Key-Value Pair
+    extraReducers: {
+        [resetCounter]: (state, action ) => {
+            state.message = "Counter reset KeyValueExtraReducers";
             state.type = "info";
-        })
+        }
     }
 });
 
